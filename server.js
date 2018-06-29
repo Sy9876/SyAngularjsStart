@@ -9,5 +9,5 @@ server.listen(port);
 app.use(express.static(path.join(__dirname)));
 
 app.get('/', function(req, res) {
-	res.sendfile(__dirname + '/www/index.html');
+	res.sendFile(__dirname + '/www/index.html');
 });
