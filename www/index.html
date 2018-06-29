@@ -5,16 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>myApp</title>
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="www/css/myStyle.css">
+	<!-- <link rel="stylesheet" href="www/css/myStyle.css"> -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </head>
 
-<body ng-app="myApp" ng-controller="indexController">
+<body ng-app="myApp" class="content">
 
 <div class="container">
+	<div class="row bg-warning" id="header">
+		<p>this is header</p>
+	</div>
+
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-2 bg-primary" id="leftMenu">
+			<p>this is left menu</p>
+		</div>
+		<div class="col-md-8 bg-success" id="content">
+			<p>this is left content</p>
 			<form class="form-group">
 				<input type="text" class="form-control" ng-model="vo.searchName" placeholder="输入名字">
 				<button type="submit" class="btn btn-default" ng-click="searchByName()">搜索</button>
@@ -22,13 +30,11 @@
 		</div>
 	</div>
 	
-	<div class="row">
-		<div class="col-md-4">
-			<my-input my-data="hello" my-data2="vo.myData"></my-input>
-		</div>
+	<div class="row bg-warning" id="footer">
+		<p>this is footer</p>
 	</div>
-</div>
 
+</div>
 
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
