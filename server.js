@@ -6,8 +6,8 @@ var path = require("path");
 var port = process.env.PORT || 8080;
 server.listen(port);
 
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname)));
 
 app.get('/', function(req, res) {
-	res.sendfile(__dirname + '/index.html');
+	res.sendfile(__dirname + '/www/index.html');
 });
