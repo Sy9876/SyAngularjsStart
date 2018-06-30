@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.18",
+    "@uirouter/sticky-states": "^1.5.0",
     "angular": "^1.7.2",
     "bootstrap": "^3.3.7",
     "express": "^4.16.2",

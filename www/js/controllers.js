@@ -16,7 +16,7 @@ angular.module('myApp')
 
     vm.init();
 })
-.controller('state1Controller', function($scope) {
+.controller('state1Controller', function($scope, $state) {
     var controllerName = 'state1Controller';
     var vm=$scope;
     vm.vo={
@@ -24,11 +24,15 @@ angular.module('myApp')
 
     vm.init = function() {
         console.log(controllerName + '.init.  ');
+
+        console.log('state:', $state.current);
+        console.log('state:', $state.includes('about'));
+
     }
 
     vm.init();
 })
-.controller('state2Controller', function($scope) {
+.controller('state2Controller', function($scope, $state) {
     var controllerName = 'state2Controller';
     var vm=$scope;
     vm.vo={
@@ -36,6 +40,10 @@ angular.module('myApp')
 
     vm.init = function() {
         console.log(controllerName + '.init.  ');
+
+        console.log('state:', $state.current);
+        console.log('state:', $state.includes('about'));
+
     }
 
     vm.init();
