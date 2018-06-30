@@ -12,35 +12,7 @@
 
 <body ng-app="myApp" class="content">
 
-<div class="container">
-	<div class="row bg-warning" id="header">
-		<p>this is header</p>
-	</div>
-
-	<div class="row">
-		<div class="col-md-2 bg-danger" id="leftMenu">
-			<p>this is left menu</p>
-			<ul>
-				<li>
-					<a ui-sref="state1" ui-sref-active="active">state 1</a>
-				</li>
-				<li>
-					<a ui-sref="state2" ui-sref-active="">state 2</a>
-				</li>
-			</ul>
-
-			
-		</div>
-		<div class="col-md-8" id="content">
-			<div ui-view="bar" ></div>
-		</div>
-	</div>
-	
-	<div class="row bg-warning" id="footer">
-		<p>this is footer</p>
-	</div>
-
-</div>
+<div ui-view ></div>
 
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>

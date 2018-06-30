@@ -1,6 +1,6 @@
 angular.module('myApp')
-.controller('indexController', function($scope) {
-    var controllerName = 'indexController';
+.controller('appController', function($scope) {
+    var controllerName = 'appController';
     var vm=$scope;
     vm.vo={
         name:'default',
