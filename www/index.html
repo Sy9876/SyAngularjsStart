@@ -12,17 +12,16 @@
 
 <body ng-app="myApp" class="content">
 
-<!-- <div ui-view ></div> -->
+<br />
+<p> state: {{$state.current.name}}</p>
+<br />
+<div ui-view ></div>
 
-<a ui-sref="home" ui-sref-active="active">home</a>
+<!-- <a ui-sref="home" ui-sref-active="active">home</a>
 <a ui-sref="about" ui-sref-active="active">about</a>
 
 <div ui-view="home" ng-show="$state.includes('home')"></div>
-<div ui-view="about" ng-show="$state.includes('about')"></div>
-<!-- <div ui-view="home" ></div>
-<div ui-view="about" ></div> -->
-<br />
-<p> state: {{$state.current.name}}</p>
+<div ui-view="about" ng-show="$state.includes('about')"></div> -->
 
 
 <script src="node_modules/angular/angular.js"></script>

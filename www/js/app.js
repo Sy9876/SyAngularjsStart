@@ -11,41 +11,43 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
     var StickyStatesPlugin = window['@uirouter/sticky-states'].StickyStatesPlugin;
     $uiRouterProvider.plugin(StickyStatesPlugin);
 
-    // Add states
-    var stateRegistry = $uiRouterProvider.stateRegistry;
+    // // Add states
+    // // var stateRegistry = $uiRouterProvider.stateRegistry;
 
-    stateRegistry.register({ 
-        name: 'home',
-        url: '/home',
-        sticky: true,
-        views: {
-            'home': {
-                template: '<h1>home</h1>',
-                controller: 'state1Controller'
-            }
-        }
-    });
+    // //stateRegistry.register({ 
+    // $stateProvider.state({ 
+    //     name: 'home',
+    //     url: '/home',
+    //     sticky: true,
+    //     views: {
+    //         'home': {
+    //             template: '<h1>home</h1>',
+    //             controller: 'state1Controller'
+    //         }
+    //     }
+    // });
 
-    stateRegistry.register({
-        name: 'about',
-        url: '/about',
-        sticky: true,
-        views: {
-            'about': {
-                template: '<h1>about</h1>',
-                controller: 'state2Controller'
-            }
-        }
-    });
+    // //stateRegistry.register({ 
+    // $stateProvider.state({ 
+    //     name: 'about',
+    //     url: '/about',
+    //     sticky: true,
+    //     views: {
+    //         'about': {
+    //             template: '<h1>about</h1>',
+    //             controller: 'state2Controller'
+    //         }
+    //     }
+    // });
   
     // Set initial state
-    var urlService = $uiRouterProvider.urlService;
-    urlService.rules.initial({ state: 'home' })
+    // var urlService = $uiRouterProvider.urlService;
+    // urlService.rules.initial({ state: 'home' })
 
-    /*
+
     // $stickyStateProvider.enableDebug(true);
     $urlRouterProvider.when('',"/app");
-
+/**/
     $stateProvider
     // .state({
     //     name: 'home',
@@ -62,27 +64,31 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
         controller: 'appController'
     })    
     .state({
-        name: 'app.sticky',
-        url: '/sticky',
-        sticky: true,
-        templateUrl: 'www/templates/sticky.html'
-    })
-    .state({
-        name: 'app.sticky.state1',
+        name: 'app.state1',
         url: '/state1',
+        sticky: true,
         cache: true,
-        templateUrl: 'www/templates/state1.html',
-        controller: 'state1Controller'
+        views: {
+            'state1': {
+                templateUrl: 'www/templates/state1.html',
+                controller: 'state1Controller'
+            }
+        }
     })
     .state({
-        name: 'app.sticky.state2',
+        name: 'app.state2',
         url: '/state2',
+        sticky: true,
         cache: true,
-        templateUrl: 'www/templates/state2.html',
-        controller: 'state2Controller'
+        views: {
+            'state2': {
+                templateUrl: 'www/templates/state2.html',
+                controller: 'state2Controller'
+            }
+        }
     })
     ;
-*/
+/**/
 })
 .run(function($rootScope, $state) {
     console.log('myApp.run');
@@ -91,6 +97,16 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
         console.log('on stateChangeStart');
+        console.log(event);
+        console.log(toState);
+        console.log(toParams);
+        console.log(fromState);
+        console.log(fromParams);
+        
+    })
+
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        console.log('on stateChangeSuccess');
         console.log(event);
         console.log(toState);
         console.log(toParams);
