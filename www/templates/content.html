@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active">
+        <a ui-sref="app.content.state1" ui-sref-active="active" role="tab" data-toggle="tab" data-target="#idState1" >state 1</a>
+    </li>
+    <li role="presentation">
+        <a ui-sref="app.content.state2" ui-sref-active="" role="tab" data-toggle="tab" data-target="#idState2" >state 2</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="idState1">
+        <p>this is tab state1</p>
+        <div ui-view="state1" ng-show="$state.includes('app.content.state1')"></div>
+    </div>
+    <div role="tabpanel" class="tab-pane " id="idState2">
+        <p>this is tab state2</p>
+        <div ui-view="state2" ng-show="$state.includes('app.content.state2')"></div>
+    </div>
+</div>

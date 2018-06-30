@@ -64,10 +64,19 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
         controller: 'appController'
     })    
     .state({
-        name: 'app.state1',
+        name: 'app.content',
+        url: '/content',
+        views: {
+            'contentView': {
+                templateUrl: 'www/templates/content.html'
+            }
+        }
+    })    
+    .state({
+        name: 'app.content.state1',
         url: '/state1',
         sticky: true,
-        cache: true,
+        // cache: true,
         views: {
             'state1': {
                 templateUrl: 'www/templates/state1.html',
@@ -76,10 +85,10 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
         }
     })
     .state({
-        name: 'app.state2',
+        name: 'app.content.state2',
         url: '/state2',
         sticky: true,
-        cache: true,
+        // cache: true,
         views: {
             'state2': {
                 templateUrl: 'www/templates/state2.html',
