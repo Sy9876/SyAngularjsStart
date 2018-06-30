@@ -8,17 +8,17 @@
 			<p>this is left menu</p>
 			<ul>
 				<li>
-					<a ui-sref="app.state1" ui-sref-active="active">state 1</a>
+					<a ui-sref="app.sticky.state1" ui-sref-active="active">state 1</a>
 				</li>
 				<li>
-					<a ui-sref="app.state2" ui-sref-active="">state 2</a>
+					<a ui-sref="app.sticky.state2" ui-sref-active="">state 2</a>
 				</li>
 			</ul>
 
 			
 		</div>
 		<div class="col-md-8" id="content">
-			<div ui-view ></div>
+			<div ui-view="sticky" ></div>  <!-- ng-show="$state.includes('app.sticky')" -->
 		</div>
 	</div>
 	

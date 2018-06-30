@@ -1,15 +1,20 @@
-angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
+angular.module('myApp', ['ui.router', "ct.ui.router.extras.sticky"]) //
 .config(function(
     $stateProvider
     , $urlRouterProvider
-    // , $stickyStateProvider
+    , $stickyStateProvider
 ) {
     console.log('myApp.config');
 
-    // $stickyStateProvider.enableDebug(true);
-    $urlRouterProvider.when('',"/app");
+    $stickyStateProvider.enableDebug(true);
+    $urlRouterProvider.when('',"/");
 
     $stateProvider
+    .state({
+        name: 'home',
+        url: '/',
+        template: '<h1>hello</h1>'
+    })    
     .state({
         name: 'app',
         url: '/app',
@@ -20,17 +25,21 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
         controller: 'appController'
     })    
     .state({
-        name: 'app.state1',
-        url: '/state1',
+        name: 'app.sticky',
+        url: '/sticky',
         sticky: true,
+        templateUrl: 'www/templates/sticky.html'
+    })
+    .state({
+        name: 'app.sticky.state1',
+        url: '/state1',
         cache: true,
         templateUrl: 'www/templates/state1.html',
         controller: 'state1Controller'
     })
     .state({
-        name: 'app.state2',
+        name: 'app.sticky.state2',
         url: '/state2',
-        sticky: true,
         cache: true,
         templateUrl: 'www/templates/state2.html',
         controller: 'state2Controller'
