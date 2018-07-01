@@ -68,7 +68,9 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
         url: '/content',
         views: {
             'contentView': {
-                templateUrl: 'www/templates/content.html'
+                templateUrl: 'www/templates/content.html',
+                controller: 'contentController',
+                controllerAs: 'vm'
             }
         }
     })    
