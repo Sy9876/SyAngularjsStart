@@ -127,5 +127,25 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
     })
 
 
+    $rootScope.rootScopeActivateState = function(idx) {
+        console.log('rootScopeActivateState idx=' + idx);
+
+        var target = '';
+        var targetState = '';
+        if(idx=='1') {
+            target='#idState1';
+            targetState='app.content.state1';
+        }
+        else {
+            target='#idState2';
+            targetState='app.content.state2';
+        }
+        var selector = '#id_content_ul a[data-target="' + target + '"]';
+
+        console.log('rootScopeActivateState show tab ' + selector);
+        $(selector).tab('show');
+        $state.go(targetState);
+
+    }
 })
 ;

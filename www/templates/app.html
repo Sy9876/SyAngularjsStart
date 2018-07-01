@@ -8,10 +8,10 @@
 			<p>this is left menu</p>
 			<ul>
 				<li>
-					<a ui-sref="app.content.state1" ui-sref-active="active">state 1</a>
+					<a ui-sref="app.content.state1" ui-sref-active="active" ng-click="rootScopeActivateState('1')">state 1</a>
 				</li>
 				<li>
-					<a ui-sref="app.content.state2" ui-sref-active="active">state 2</a>
+					<a ui-sref="app.content.state2" ui-sref-active="active" ng-click="rootScopeActivateState('2')">state 2</a>
 				</li>
 			</ul>
 
@@ -26,6 +26,9 @@
 	
 	<div class="row bg-warning" id="footer">
 		<p>this is footer</p>
+		<!-- <button ng-click="rootScopeActivateState('1')">activate tab state1</button>
+		<br />
+		<button ng-click="rootScopeActivateState('2')">activate tab state2</button> -->
 	</div>
 
 </div>
