@@ -82,7 +82,8 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
         views: {
             'state1': {
                 templateUrl: 'www/templates/state1.html',
-                controller: 'state1Controller'
+                controller: 'state1Controller',
+                controllerAs: 'vm'
             }
         }
     })
@@ -94,7 +95,41 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
         views: {
             'state2': {
                 templateUrl: 'www/templates/state2.html',
-                controller: 'state2Controller'
+                controller: 'state2Controller',
+                controllerAs: 'vm'
+            }
+        }
+    })
+    .state({
+        name: 'app.content.Home',
+        url: '/Home',
+        sticky: true,
+        // cache: true,
+        views: {
+            'Home': {
+                template: '<h1>Home</h1>'
+            }
+        }
+    })
+    .state({
+        name: 'app.content.Profile',
+        url: '/Profile',
+        sticky: true,
+        // cache: true,
+        views: {
+            'Profile': {
+                template: '<h1>Profile</h1>'
+            }
+        }
+    })
+    .state({
+        name: 'app.content.Messages',
+        url: '/Messages',
+        sticky: true,
+        // cache: true,
+        views: {
+            'Messages': {
+                template: '<h1>Messages</h1>'
             }
         }
     })
@@ -136,9 +171,21 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
             target='#idState1';
             targetState='app.content.state1';
         }
-        else {
+        else if(idx=='2') {
             target='#idState2';
             targetState='app.content.state2';
+        }
+        else if(idx=='Home') {
+            target='#Home';
+            targetState='app.content.Home';
+        }
+        else if(idx=='Profile') {
+            target='#Profile';
+            targetState='app.content.Profile';
+        }
+        else if(idx=='Messages') {
+            target='#Messages';
+            targetState='app.content.Messages';
         }
         var selector = '#id_content_ul a[data-target="' + target + '"]';
 

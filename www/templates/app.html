@@ -8,10 +8,19 @@
 			<p>this is left menu</p>
 			<ul>
 				<li>
+					<a ui-sref="app.content.Home" ui-sref-active="active" ng-click="rootScopeActivateState('Home')">Home</a>
+				</li>
+				<li>
 					<a ui-sref="app.content.state1" ui-sref-active="active" ng-click="rootScopeActivateState('1')">state 1</a>
 				</li>
 				<li>
 					<a ui-sref="app.content.state2" ui-sref-active="active" ng-click="rootScopeActivateState('2')">state 2</a>
+				</li>
+				<li>
+					<a ui-sref="app.content.Profile" ui-sref-active="active" ng-click="rootScopeActivateState('Profile')">Profile</a>
+				</li>
+				<li>
+					<a ui-sref="app.content.Messages" ui-sref-active="active" ng-click="rootScopeActivateState('Messages')">Messages</a>
 				</li>
 			</ul>
 
