@@ -11,10 +11,11 @@
     </li>
 </ul> -->
 
+<!-- ng-class="{'active': vm.isActivated(t.title), '':!vm.isActivated(t.title)}" -->
 <ul class="nav nav-tabs" id="id_content_ul">
-    <li role="presentation" ng-class="{'active': vm.isActivated(t.title), '':!vm.isActivated(t.title)}" ng-repeat="t in vm.tabEnabled">
+    <li role="presentation"  ng-repeat="t in vm.tabShown">
         <a ui-sref="{{t.route}}" role="tab" data-target="{{t.target}}" data-toggle="tab">
-                {{t.title}} <i class="fa fa-remove tab-close" ng-click="vm.closeTab(t.title)"></i></a></i>
+                {{t.title}} <i class="fa fa-remove tab-close" ng-click="vm.closeTab($event, t.route)"></i></a></i>
     </li>
 </ul>
 
