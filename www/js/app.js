@@ -1,5 +1,5 @@
 
-angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
+angular.module('myApp', ['ui.router', 'ui.router.state.events']) //, "ct.ui.router.extras.sticky"
 .config(function(
     $stateProvider
     , $urlRouterProvider
@@ -46,7 +46,7 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
 
 
     // $stickyStateProvider.enableDebug(true);
-    $urlRouterProvider.when('',"/app");
+    $urlRouterProvider.when('',"/app/content/Home");
 /**/
     $stateProvider
     // .state({
@@ -142,22 +142,22 @@ angular.module('myApp', ['ui.router']) //, "ct.ui.router.extras.sticky"
     $rootScope.$state = $state;
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-        console.log('on stateChangeStart');
-        console.log(event);
-        console.log(toState);
-        console.log(toParams);
-        console.log(fromState);
-        console.log(fromParams);
+        console.log('on stateChangeStart from ' + fromState.name + '  to  ' + toState.name);
+        // console.log(event);
+        // console.log(toState);
+        // console.log(toParams);
+        // console.log(fromState);
+        // console.log(fromParams);
         
     })
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-        console.log('on stateChangeSuccess');
-        console.log(event);
-        console.log(toState);
-        console.log(toParams);
-        console.log(fromState);
-        console.log(fromParams);
+        console.log('on stateChangeSuccess from ' + fromState.name + '  to  ' + toState.name);
+        // console.log(event);
+        // console.log(toState);
+        // console.log(toParams);
+        // console.log(fromState);
+        // console.log(fromParams);
         
     })
 
